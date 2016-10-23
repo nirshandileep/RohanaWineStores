@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="plugins/iCheck/all.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -286,12 +288,13 @@
         </section>
         <!-- /.sidebar -->
     </aside>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Empty Categories
+                Edit Empty Category
             </h1>
 
         </section>
@@ -300,199 +303,62 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="box">
-
-
-
+                    <div class="box box-primary">
+                     
                         <!-- /.box-header -->
-                        <div class="box-body">
-                            <table id="example2" class="table table-bordered table-hover table-box">
-                                <thead>
-                                <tr>
-                                    <th>Empty Category</th>
-                                    <th>Empty Sales Price</th>
-                                    <th>Empty Purchase Price</th>
-                                    <th>Empty Purchase From Company Price</th>
-                                    <th>Display Order</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                        <!-- form start -->
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Empty Category</label>
+                                    <div style="width:100%" class="input-group">
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block;" class="">
+                                        <div class="icheckbox_flat-green checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-red" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        Display in Empty Stock Adjustment
+                                    </label>
+                                    <label style="display: block;" class="">
+                                        <div class="icheckbox_flat-green checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-red" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        Display in Empty Sales
+                                    </label>
+                                    <label style="display: block;" class="">
+                                        <div class="icheckbox_flat-green checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-red" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                        Display in Empty Purchases
+                                    </label>
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Empty Sales Price</label>
+                                    <div style="width:20%" class="input-group">
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                                        <input class="form-control" style="text-align: right" type="number"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Empty Purchase Price</label>
+                                    <div style="width:20%" class="input-group">
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                                        <input class="form-control" style="text-align: right" type="number"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Empty Purchase from Company Price</label>
+                                    <div style="width:20%" class="input-group">
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
+                                        <input class="form-control" type="number"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
 
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td>Trident</td>
-                                    <td><a href="edit_empty_category.html" target="_blank">Edit</a><a>Delete</a></td>
-
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </div>
+                        </form>
                     </div>
 
                     <!-- /.box -->
@@ -507,13 +373,13 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.3.6
         </div>
 
     </footer>
+
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Create the tabs -->
@@ -720,9 +586,7 @@
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
+
 <!-- Sparkline -->
 <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -734,6 +598,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
 <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
@@ -743,9 +609,25 @@
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script type="text/javascript">
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_minimal-blue',
+        radioClass: 'iradio_minimal-blue'
+    });
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+        checkboxClass: 'icheckbox_minimal-red',
+        radioClass: 'iradio_minimal-red'
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+    });
+</script>
 </body>
 </html>
