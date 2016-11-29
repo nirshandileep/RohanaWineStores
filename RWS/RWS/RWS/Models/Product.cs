@@ -9,6 +9,7 @@ using System.Web;
 //using RWS.DAL;
 using System.Data.Common;
 using System.ComponentModel.DataAnnotations;
+using RWS.DAL;
 
 namespace RWS.Models
 {
@@ -41,7 +42,7 @@ namespace RWS.Models
 
         public static int UpdateProduct(Product product)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=SARANLAP\\SQLEXP2016;Initial Catalog=WineStore;Integrated Security=SSPI;"))
+            using (SqlConnection conn = new SqlConnection(Connection.DBConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("UpdateProduct", conn))
                 {

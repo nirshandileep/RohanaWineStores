@@ -1,0 +1,98 @@
+﻿@model RWS.Models.EmptyCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empty Category</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowAdjustment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowAdjustment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowSales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowSales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
