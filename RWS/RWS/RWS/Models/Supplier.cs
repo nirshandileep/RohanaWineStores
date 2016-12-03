@@ -21,8 +21,12 @@ namespace RWS.Models
         public decimal EmptyPurchaseBalance { get; set; }
         [Display(Name = "Display Order")]
         public int DisplayOrder { get; set; }
+        [Display(Name = "Created User")]
         public int CreatedUser { get; set; }
+        [Display(Name = "Created Date")]
         public DateTime CreatedDate { get; set; }
+        [Display(Name = "Supplier")]
+        public string DisplayName { get; set; }
 
         public static int UpdateSupplier(Supplier supplier)
         {

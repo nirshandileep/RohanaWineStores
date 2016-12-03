@@ -16,6 +16,15 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.SupplierId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.SupplierId)*@
+                @Html.DropDownListFor(model => model.SupplierId, new System.Web.Mvc.SelectList(Model.Supplier, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.SupplierId)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.ProductCode, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ProductCode)
@@ -32,10 +41,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SupplierId, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UomId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SupplierId)
-                @Html.ValidationMessageFor(model => model.SupplierId)
+                @*@Html.EditorFor(model => model.UomId)*@
+                @Html.DropDownListFor(model => model.UomId, new System.Web.Mvc.SelectList(Model.Unit, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.UomId)
             </div>
         </div>
 
@@ -72,14 +82,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UomId, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UomId)
-                @Html.ValidationMessageFor(model => model.UomId)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.DisplayOrder, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DisplayOrder)
@@ -90,7 +92,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductType, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductType)
+                @*@Html.EditorFor(model => model.ProductType)*@
+                @Html.RadioButtonFor(model => model.ProductType, "1", false)@Html.Label("Arrack")
+                @Html.RadioButtonFor(model => model.ProductType, "2", false)@Html.Label("Beer")
+                @Html.RadioButtonFor(model => model.ProductType, "3", false)@Html.Label("FL")
+                @Html.RadioButtonFor(model => model.ProductType, "4", false)@Html.Label("Other")
                 @Html.ValidationMessageFor(model => model.ProductType)
             </div>
         </div>
@@ -98,15 +104,28 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AllowSales, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AllowSales)
+                @*@Html.EditorFor(model => model.AllowSales)*@
+                @Html.RadioButtonFor(model => model.AllowSales, "1", false)@Html.Label("Sales Only")
+                @Html.RadioButtonFor(model => model.AllowSales, "2", false)@Html.Label("Sales and Empty Sales")
+                @Html.RadioButtonFor(model => model.AllowSales, "3", false)@Html.Label("Empty Sales Only")
                 @Html.ValidationMessageFor(model => model.AllowSales)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmptyCategoryId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmptyCategoryId, new System.Web.Mvc.SelectList(Model.EmptyCategory, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.EmptyCategoryId)
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IsActive)
+                @*@Html.EditorFor(model => model.IsActive)*@
+                @Html.RadioButtonFor(model => model.IsActive, true, false)@Html.Label("Active")
+                @Html.RadioButtonFor(model => model.IsActive, false, false)@Html.Label("Inactive")
                 @Html.ValidationMessageFor(model => model.IsActive)
             </div>
         </div>
@@ -135,13 +154,13 @@
             </div>
         </div>*@
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.UnitSize, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UnitSize)
                 @Html.ValidationMessageFor(model => model.UnitSize)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

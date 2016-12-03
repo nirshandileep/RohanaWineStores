@@ -8,12 +8,28 @@
 <h2>Empty Categories</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Empty Category", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CategoryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.AllowPurchase)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AllowAdjustment)
@@ -22,35 +38,34 @@
             @Html.DisplayNameFor(model => model.AllowSales)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AllowPurchase)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PurchasePrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SellingPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayOrder)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.CreatedUser)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryCode)
+            @*@Html.DisplayFor(modelItem => item.CategoryCode)*@
+            @Html.ActionLink(item.CategoryCode, "Details", new { id = item.CategoryId })
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.SellingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayOrder)
+        </td>
+
+        @*<td>
             @Html.DisplayFor(modelItem => item.AllowAdjustment)
         </td>
         <td>
@@ -60,26 +75,14 @@
             @Html.DisplayFor(modelItem => item.AllowPurchase)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PurchasePrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SellingPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayOrder)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CreatedUser)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |*@
             @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
         </td>
     </tr>

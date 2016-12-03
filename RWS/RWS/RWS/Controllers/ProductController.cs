@@ -28,7 +28,11 @@ namespace RWS.Controllers
         // GET: /Product/Create
         public ActionResult Create()
         {
-            return View();
+            Product pro = new Product();
+            pro.Supplier = new SelectList(Common.GetDataList<Supplier>(0), "SupplierId", "DisplayName");
+            pro.EmptyCategory = new SelectList(Common.GetDataList<EmptyCategory>(0), "CategoryId", "CategoryCode");
+            pro.Unit = new SelectList(Common.GetDataList<Unit>(0), "UomId", "UomDesc");
+            return View(pro);
         }
 
         //
@@ -42,9 +46,14 @@ namespace RWS.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ModelState.AddModelError(String.Empty, ex.Message);
+                Product pro = new Product();
+                pro.Supplier = new SelectList(Common.GetDataList<Supplier>(0), "SupplierId", "DisplayName");
+                pro.EmptyCategory = new SelectList(Common.GetDataList<EmptyCategory>(0), "CategoryId", "CategoryCode");
+                pro.Unit = new SelectList(Common.GetDataList<Unit>(0), "UomId", "UomDesc");
+                return View(pro);
             }
         }
 
@@ -52,7 +61,13 @@ namespace RWS.Controllers
         // GET: /Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(Common.GetDataList<Product>(id).FirstOrDefault());
+            Product pro = new Product();
+            pro = Common.GetDataList<Product>(id).FirstOrDefault();
+
+            pro.Supplier = new SelectList(Common.GetDataList<Supplier>(0), "SupplierId", "DisplayName");
+            pro.EmptyCategory = new SelectList(Common.GetDataList<EmptyCategory>(0), "CategoryId", "CategoryCode");
+            pro.Unit = new SelectList(Common.GetDataList<Unit>(0), "UomId", "UomDesc");
+            return View(pro);
         }
 
         //
@@ -66,9 +81,14 @@ namespace RWS.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ModelState.AddModelError(String.Empty, ex.Message);
+                Product pro = new Product();
+                pro.Supplier = new SelectList(Common.GetDataList<Supplier>(0), "SupplierId", "DisplayName");
+                pro.EmptyCategory = new SelectList(Common.GetDataList<EmptyCategory>(0), "CategoryId", "CategoryCode");
+                pro.Unit = new SelectList(Common.GetDataList<Unit>(0), "UomId", "UomDesc");
+                return View(pro);
             }
         }
 
@@ -76,7 +96,7 @@ namespace RWS.Controllers
         // GET: /Product/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(Common.GetDataList<Product>(id).FirstOrDefault());
         }
 
         //
@@ -86,7 +106,7 @@ namespace RWS.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Common.DeleteData("Product", "ProductId", id);
 
                 return RedirectToAction("Index");
             }

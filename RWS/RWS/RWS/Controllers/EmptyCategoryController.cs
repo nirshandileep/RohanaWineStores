@@ -42,8 +42,9 @@ namespace RWS.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
+                ModelState.AddModelError(String.Empty, ex.Message);
                 return View();
             }
         }
@@ -66,8 +67,9 @@ namespace RWS.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
+                ModelState.AddModelError(String.Empty, ex.Message);
                 return View();
             }
         }
@@ -76,7 +78,7 @@ namespace RWS.Controllers
         // GET: /EmptyCategory/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(Common.GetDataList<EmptyCategory>(id).FirstOrDefault());
         }
 
         //
@@ -86,7 +88,7 @@ namespace RWS.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Common.DeleteData("EmptyCategory", "CategoryId", id);
 
                 return RedirectToAction("Index");
             }

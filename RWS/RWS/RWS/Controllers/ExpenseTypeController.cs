@@ -8,37 +8,37 @@ using System.Web.Mvc;
 
 namespace RWS.Controllers
 {
-    public class SupplierController : Controller
+    public class ExpenseTypeController : Controller
     {
         //
-        // GET: /Supplier/
+        // GET: /ExpenseType/
         public ActionResult Index()
         {
-            return View(Common.GetDataList<Supplier>(0));
+            return View(Common.GetDataList<ExpenseType>(0));
         }
 
         //
-        // GET: /Supplier/Details/5
+        // GET: /ExpenseType/Details/5
         public ActionResult Details(int id)
         {
-            return View(Common.GetDataList<Supplier>(id).FirstOrDefault());
+            return View(Common.GetDataList<ExpenseType>(id).FirstOrDefault());
         }
 
         //
-        // GET: /Supplier/Create
+        // GET: /ExpenseType/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Supplier/Create
+        // POST: /ExpenseType/Create
         [HttpPost]
-        public ActionResult Create(Supplier supplier)
+        public ActionResult Create(ExpenseType expenseType)
         {
             try
             {
-                Supplier.UpdateSupplier(supplier);
+                ExpenseType.UpdateExpenseType(expenseType);
 
                 return RedirectToAction("Index");
             }
@@ -50,20 +50,20 @@ namespace RWS.Controllers
         }
 
         //
-        // GET: /Supplier/Edit/5
+        // GET: /ExpenseType/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(Common.GetDataList<Supplier>(id).FirstOrDefault());
+            return View(Common.GetDataList<ExpenseType>(id).FirstOrDefault());
         }
 
         //
-        // POST: /Supplier/Edit/5
+        // POST: /ExpenseType/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Supplier supplier)
+        public ActionResult Edit(int id, ExpenseType expenseType)
         {
             try
             {
-                Supplier.UpdateSupplier(supplier);
+                ExpenseType.UpdateExpenseType(expenseType);
 
                 return RedirectToAction("Index");
             }
@@ -75,20 +75,20 @@ namespace RWS.Controllers
         }
 
         //
-        // GET: /Supplier/Delete/5
+        // GET: /ExpenseType/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(Common.GetDataList<Supplier>(id).FirstOrDefault());
+            return View(Common.GetDataList<ExpenseType>(id).FirstOrDefault());
         }
 
         //
-        // POST: /Supplier/Delete/5
+        // POST: /ExpenseType/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                Common.DeleteData("Supplier", "SupplierId", id);
+                Common.DeleteData("ExpenseType", "ExpenseTypeId", id);
 
                 return RedirectToAction("Index");
             }

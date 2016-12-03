@@ -8,7 +8,7 @@
 <h2>Suppliers</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Supplier", "Create")
 </p>
 <table class="table">
     <tr>
@@ -27,12 +27,12 @@
         <th>
             @Html.DisplayNameFor(model => model.DisplayOrder)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.CreatedUser)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -54,12 +54,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.DisplayOrder)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.CreatedUser)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SupplierId }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.SupplierId }) |*@

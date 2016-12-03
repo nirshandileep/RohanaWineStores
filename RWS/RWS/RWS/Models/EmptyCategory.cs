@@ -1,6 +1,7 @@
 ﻿using RWS.DAL;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,13 +12,21 @@ namespace RWS.Models
     public class EmptyCategory
     {
         public int CategoryId { get; set; }
+        [Display(Name = "Empty Category")]
         public string CategoryCode { get; set; }
+        [Display(Name = "Display in Empty Stock Adjustments")]
         public bool AllowAdjustment { get; set; }
+        [Display(Name = "Display in Empty Sales")]
         public bool AllowSales { get; set; }
+        [Display(Name = "Display in Empty Purchase")]
         public bool AllowPurchase { get; set; }
+        [Display(Name = "Empty Purchase Price")]
         public decimal PurchasePrice { get; set; }
+        [Display(Name = "Empty Sales Price")]
         public decimal SellingPrice { get; set; }
+        [Display(Name = "Company Price")]
         public decimal CompanyPrice { get; set; }
+        [Display(Name = "Display Order")]
         public int DisplayOrder { get; set; }
         public int CreatedUser { get; set; }
         public DateTime CreatedDate { get; set; }

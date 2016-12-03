@@ -75,6 +75,23 @@ namespace RWS.DAL
                 }
             }
         }
-    
+
+        public static int DeleteData(string tableName, string key, int id)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection.DBConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("DeleteData", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@TableName", tableName);
+                    cmd.Parameters.AddWithValue("@Key", key);
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
