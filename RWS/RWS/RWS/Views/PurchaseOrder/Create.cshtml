@@ -1,0 +1,138 @@
+﻿@model RWS.Models.Order
+<script>
+    $(document).ready(function () {
+        $("#OrderDate").datepicker();
+
+    });
+
+    function updateTotalValue(id) {
+        var qnt = $('#OrderDetail_' + id + '__Qty').val();
+        var uprc = $('#OrderDetail_' + id + '__UnitPrice').val();
+        val = (qnt * uprc);
+
+        $('#OrderDetail_' + id + '__LineTotal').val(val.toFixed(2));
+    }
+</script>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Order</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.OrderNo)
+                @Html.ValidationMessageFor(model => model.OrderNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderDate, new {@class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrderDate, new { @Value = DateTime.Now.Date, id = "OrderDate" })
+                @Html.ValidationMessageFor(model => model.OrderDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SupplierId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.SupplierId)*@
+                @Html.DropDownListFor(model => model.SupplierId, new System.Web.Mvc.SelectList(Model.Supplier, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.SupplierId)
+            </div>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    
+                </th>
+                <th>
+                    Product Code
+                </th>
+                <th>
+                    Product Desc
+                </th>
+                <th>
+                    Unit Size
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Cost Price
+                </th>
+                <th>
+                    Selling Price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Product Total
+                </th>
+            </tr>
+            @for (int i = 0; i < Model.OrderDetail.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.EditorFor(m => m.OrderDetail[i].ProductId, new { htmlAttributes = new { @class = "control-label grid-lable hidden", @readonly = "readonly" } })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => m.OrderDetail[i].ProductCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => m.OrderDetail[i].ProductDesc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => m.OrderDetail[i].UnitSize)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => m.OrderDetail[i].ProductTypeDesc)
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.OrderDetail[i].PurchasePrice, new { htmlAttributes = new { @class = "control-label grid-lable", @readonly = "readonly" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.OrderDetail[i].UnitPrice, new { htmlAttributes = new { @class = "control-label grid-lable", @readonly = "readonly" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.OrderDetail[i].Qty, new { htmlAttributes = new { @style = "text-align: right" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.OrderDetail[i].LineTotal, new { htmlAttributes = new { @class = "control-label grid-lable", @readonly = "readonly" } })
+                    </td>
+                </tr>
+                Model.OrderDetail[i].LineId = i;
+                @Html.Partial("_OrderDetail", Model.OrderDetail[i])
+            }
+        </table>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

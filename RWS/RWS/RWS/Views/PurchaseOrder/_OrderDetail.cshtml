@@ -1,0 +1,9 @@
+﻿@model RWS.Models.OrderDetail
+
+<script>
+
+    $('#OrderDetail_@(Model.LineId)__Qty').blur(function () {
+        updateTotalValue(@Model.LineId);
+    });
+</script>
+

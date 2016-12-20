@@ -6,6 +6,9 @@
     <title>@ViewBag.Title - Liquor Shop Management</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Styles.Render("~/Content/jquery-ui.min.css")
+    @Scripts.Render("~/Scripts/jquery-ui.min.js")
 
 </head>
 <body>
@@ -29,6 +32,7 @@
                     <li>@Html.ActionLink("Products", "Index", "Product")</li>
                     <li>@Html.ActionLink("Bank Accounts", "Index", "BankAccount")</li>
                     <li>@Html.ActionLink("Expenses", "Index", "ExpenseType")</li>
+                    <li>@Html.ActionLink("Purchase Order", "Index", "PurchaseOrder")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,7 +46,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
